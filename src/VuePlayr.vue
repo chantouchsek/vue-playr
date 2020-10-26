@@ -8,7 +8,7 @@
   import Plyr from 'plyr'
 
   export default {
-    name: 'VuePlayer',
+    name: 'VuePlayr',
     props: {
       /** Options object for plyr config. **/
       options: {
@@ -35,6 +35,7 @@
     computed: {
       opts () {
         const options = this.options
+        // eslint-disable-next-line no-prototype-builtins
         if (!this.options.hasOwnProperty('hideYouTubeDOMError')) {
           options.hideYouTubeDOMError = true
         }

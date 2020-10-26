@@ -47,7 +47,7 @@ export default [
     output: {
       file: pkg.unpkg,
       format: 'iife',
-      name: 'VuePlayer',
+      name: 'VuePlayr',
       globals: {
         plyr: 'Plyr'
       }

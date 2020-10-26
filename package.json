@@ -1,5 +1,5 @@
 {
-  "name": "vue-player",
+  "name": "vue-playr",
   "version": "0.0.1",
   "description": "A vue component for the plyr video & audio player.",
   "author": {
@@ -12,9 +12,9 @@
     "build": "rollup -c",
     "lint": "vue-cli-service lint"
   },
-  "main": "./dist/vue-player.mjs",
-  "module": "./dist/vue-player.mjs",
-  "unpkg": "./dist/vue-player.js",
+  "main": "./dist/vue-playr.mjs",
+  "module": "./dist/vue-playr.mjs",
+  "unpkg": "./dist/vue-playr.js",
   "files": [
     "dist"
   ],
@@ -36,9 +36,9 @@
     "rollup-plugin-vue": "^5.1.6",
     "vue-template-compiler": "^2.6.12"
   },
-  "jsnext:main": "./dist/vue-player.mjs",
+  "jsnext:main": "./dist/vue-playr.mjs",
   "keywords": [
-    "vue-player",
+    "vue-playr",
     "vue",
     "plyr",
     "video",
@@ -52,6 +52,6 @@
     "rollup"
   ],
   "license": "MIT",
-  "repository": "github:chantouch/vue-player",
-  "ssr": "./dist/vue-player.ssr.js"
+  "repository": "github:chantouch/vue-playr",
+  "ssr": "./dist/vue-playr.ssr.js"
 }
