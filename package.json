@@ -1,0 +1,57 @@
+{
+  "name": "vue-player",
+  "version": "0.0.1",
+  "description": "A vue component for the plyr video & audio player.",
+  "author": {
+    "name": "Chantouch Sek",
+    "email": "chantouchsek.cs83@gmail.com",
+    "url": "https://bookingkh.com"
+  },
+  "scripts": {
+    "serve": "vue-cli-service serve ./demo/main.js",
+    "build": "rollup -c",
+    "lint": "vue-cli-service lint"
+  },
+  "main": "./dist/vue-player.mjs",
+  "module": "./dist/vue-player.mjs",
+  "unpkg": "./dist/vue-player.js",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "plyr": "^3.6.2",
+    "vue": "^2.6.12"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.4.1",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "^4.2.2",
+    "@vue/eslint-config-standard": "^5.1.2",
+    "babel-eslint": "^10.1.0",
+    "core-js": "^3.6.4",
+    "eslint": "^6.8.0",
+    "eslint-plugin-vue": "^6.2.2",
+    "rollup": "^2.19.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-vue": "^5.1.6",
+    "vue-template-compiler": "^2.6.12"
+  },
+  "jsnext:main": "./dist/vue-player.mjs",
+  "keywords": [
+    "vue-player",
+    "vue",
+    "plyr",
+    "video",
+    "audio",
+    "youtube",
+    "vimeo",
+    "media",
+    "player",
+    "js",
+    "javascript",
+    "rollup"
+  ],
+  "license": "MIT",
+  "repository": "github:chantouch/vue-player",
+  "ssr": "./dist/vue-player.ssr.js"
+}
