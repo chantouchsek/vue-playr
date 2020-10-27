@@ -1,24 +1,22 @@
-import VuePlayer from './VuePlayr.vue'
+import VuePlayr from './VuePlayr.vue'
 
-class VuePlayr {
-  install = (Vue, options = {}) => {
-    const { componentName = 'vue-playr' } = options
-    if (options.plyr) {
-      VuePlayer.props.options.default = () => {
-        return { ...options.plyr }
-      }
+VuePlayr.install = (Vue, options = {}) => {
+  const { componentName = 'vue-playr' } = options
+  if (options.plyr) {
+    VuePlayr.props.options.default = () => {
+      return { ...options.plyr }
     }
-    if (options.emit) {
-      VuePlayer.props.emit.default = () => {
-        return [...options.emit]
-      }
-    }
-    Vue.component(componentName, VuePlayer)
   }
+  if (options.emit) {
+    VuePlayr.props.emit.default = () => {
+      return [...options.emit]
+    }
+  }
+  Vue.component(componentName, VuePlayr)
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(VuePlayer)
+  window.Vue.use(VuePlayr)
 }
 
-export default new VuePlayr
+export default VuePlayr
