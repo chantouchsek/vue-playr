@@ -1,6 +1,6 @@
 {
   "name": "vue-playr",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A vue component for the plyr video & audio player.",
   "author": {
     "name": "Chantouch Sek",
@@ -10,7 +10,8 @@
   "scripts": {
     "serve": "vue-cli-service serve ./demo/main.js",
     "build": "rollup -c",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "prepublish": "npm run build"
   },
   "main": "./dist/vue-playr.mjs",
   "module": "./dist/vue-playr.mjs",
