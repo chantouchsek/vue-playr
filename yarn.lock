@@ -7012,7 +7012,7 @@ pkg-up@^2.0.0:
   dependencies:
     find-up "^2.1.0"
 
-plyr@^3.6.2:
+plyr@^3.6.3:
   version "3.6.3"
   resolved "https://registry.yarnpkg.com/plyr/-/plyr-3.6.3.tgz#83f359210d0aef6a0d589607134fa7f8fb7d5394"
   integrity sha512-AEwp5G9BtOK0s2mZhwtfipkCqLm1yPN8iUGcmAtyByDK1fcYoOJiDXZeLf+e7OTjsWi4wRp8Q1VJ+gZjTmVeqA==
