@@ -3,7 +3,7 @@
 	import 'plyr/dist/plyr.css'
 
 	export default {
-		name: 'VuePalyr',
+		name: 'VuePlayr',
 		props: {
 			/** Options object for plyr config. **/
 			options: {
