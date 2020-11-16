@@ -4,7 +4,6 @@
 
 <script>
 import Plyr from 'plyr'
-import 'plyr/dist/plyr.css'
 
 export default {
   name: 'VuePlayr',
