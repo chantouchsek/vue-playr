@@ -40,6 +40,12 @@ In the browser you can include it as you would any other package: with unpkg.
 <script type="text/javascript" src="https://unpkg.com/vue"></script>
 <script type="text/javascript" src="https://unpkg.com/plyr"></script>
 <script type="text/javascript" src="https://unpkg.com/vue-playr"></script>
+
+<!-- You will also need to install the component during app creation -->
+<script>
+  window.Vue.createApp(VuePalyr).mount('#app')
+</script>
+
 ```
 
 ## Usage
