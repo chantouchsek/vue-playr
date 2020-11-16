@@ -1,6 +1,6 @@
 {
   "name": "vue-playr",
-  "version": "0.0.6",
+  "version": "0.0.9",
   "description": "A vue component for the plyr video & audio player.",
   "author": {
     "name": "Chantouch Sek",
