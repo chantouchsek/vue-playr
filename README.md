@@ -26,7 +26,7 @@ Vue.use(VuePlayr, {
   plyr: {
     fullscreen: { enabled: false }
   },
-  emit: ['ended']
+  events: ['ended']
 })
 ```
 
@@ -154,7 +154,7 @@ The other way is to just pass an array of the
 events you want emitted.
 
 ```html
-<vue-playr :emit="['timeupdate','exitfullscreen']" @timeupdate="videoTimeUpdated" @exitfullscreen="exitedFullScreen">
+<vue-playr :events="['timeupdate','exitfullscreen']" @timeupdate="videoTimeUpdated" @exitfullscreen="exitedFullScreen">
 ```
 
 ## Options
@@ -178,7 +178,7 @@ Vue.use(VuePlayr, {
   plyr: {
     fullscreen: { enabled: false }
   },
-  emit: ['ended']
+  events: ['ended']
 })
 ```
 Then, in your `nuxt.config.js` file add `'~/plugins/vue-playr'` to the plugins array. The `vue-playr` element should be globally registered now.

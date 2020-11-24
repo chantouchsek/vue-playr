@@ -1,64 +1,78 @@
-<template>
-  <div class="vue--playr"><slot /></div>
-</template>
-
 <script>
-import Plyr from 'plyr'
+  import Plyr from 'plyr'
 
-export default {
-  name: 'VuePlayr',
-  props: {
-    options: {
-      type: Object,
-      required: false,
-      default () {
-        return {}
+  export default {
+    name: 'VuePlayr',
+    props: {
+      options: {
+        type: Object,
+        required: false,
+        default() {
+          return {}
+        }
+      },
+      events: {
+        type: Array,
+        default() {
+          return ['play', 'pause']
+        }
       }
     },
-    /** Array of events to emit from the plyr object **/
-    emit: {
-      type: Array,
-      required: false,
-      default () {
-        return []
+    data() {
+      return {
+        player: {}
       }
-    }
-  },
-  data () {
-    return {
-      player: {}
-    }
-  },
-  computed: {
-    opts () {
-      const options = this.options
-      // eslint-disable-next-line no-prototype-builtins
-      if (!this.options.hasOwnProperty('hideYouTubeDOMError')) {
-        options.hideYouTubeDOMError = true
+    },
+    computed: {
+      opts() {
+        const options = this.options
+        if (
+          !Object.prototype.hasOwnProperty.call(
+            this.options,
+            'hideYouTubeDOMError'
+          )
+        ) {
+          options.hideYouTubeDOMError = true
+        }
+        return options
       }
-      return options
-    }
-  },
-  mounted () {
-    this.player = new Plyr(this.$el.firstChild, this.opts)
-    this.emit.forEach(element => {
-      this.player.on(element, this.emitPlayerEvent)
-    })
-  },
-  beforeDestroy () {
-    try {
-      this.player.destroy()
-    } catch (e) {
-      if (!(this.opts.hideYouTubeDOMError && e.message === 'The YouTube player is not attached to the DOM.')) {
-        // eslint-disable-next-line no-console
-        console.error(e)
+    },
+    mounted() {
+      const _this = this
+      _this.player = new Plyr(_this.$el, _this.opts)
+      if (!_this.player) return
+      _this.events.forEach((element) => {
+        _this.player.on(element, (e) => {
+          _this.emitEvent(e)
+        })
+      })
+    },
+    methods: {
+      destroyPlyr() {
+        try {
+          this.player.destroy()
+        } catch (e) {
+          const message = 'The YouTube player is not attached to the DOM.'
+          if (!(this.opts.hideYouTubeDOMError && e.message === message)) {
+            // eslint-disable-next-line no-console
+            console.error(e)
+          }
+        }
+      },
+      emitEvent(event) {
+        const { plyr } = event.detail
+        this.$emit(event.type, plyr)
       }
-    }
-  },
-  methods: {
-    emitPlayerEvent (event) {
-      this.$emit(event.type, event)
+    },
+    beforeUnmount() {
+      this.destroyPlyr()
+    },
+    render() {
+      const slots = this.$slots.default
+      return typeof slots === 'function' ? slots()[0] : slots
     }
   }
-}
 </script>
+<style>
+@import "~plyr/dist/plyr.css";
+</style>

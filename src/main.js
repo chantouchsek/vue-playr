@@ -7,9 +7,9 @@ VuePlayr.install = (Vue, options = {}) => {
       return { ...options.plyr }
     }
   }
-  if (options.emit) {
-    VuePlayr.props.emit.default = () => {
-      return [...options.emit]
+  if (options.events) {
+    VuePlayr.props.events.default = () => {
+      return [...options.events]
     }
   }
   Vue.component(componentName, VuePlayr)
