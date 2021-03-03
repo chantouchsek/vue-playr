@@ -1,4 +1,10 @@
 # vue-playr
+
+[![Latest Version on NPM](https://img.shields.io/npm/v/vue-playr.svg?style=flat-square)](https://npmjs.com/package/vue-playr)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+[![npm](https://img.shields.io/npm/dt/vue-playr.svg?style=flat-square)](https://npmjs.com/package/vue-playr)
+[![npm](https://img.shields.io/npm/dm/vue-playr.svg?style=flat-square)](https://npmjs.com/package/vue-playr)
+
 >v0.0.1 - [Changelog](https://github.com/chantouch/vue-playr/blob/master/changelog.md)
 
 A vue component for the plyr video & audio player.
